@@ -22,3 +22,6 @@ Below is a screenshot of the aplication when it is set up!
 
 
 ![website](/picture.png);
+
+Below is a link to the video to watch how it works!
+https://www.youtube.com/watch?v=y32seMzY_XY
