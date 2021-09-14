@@ -1,4 +1,4 @@
-const initialize = require('./index');
+const managerCreation = require('./index');
 
 let template = `html ${generateHTML}`
 

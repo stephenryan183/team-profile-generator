@@ -106,7 +106,7 @@ const teamMembersArray = []
         },
     ];
 
-    function createManager() {
+    function managerCreation() {
         inquirer
             .prompt(managerQuestions)
             .then((response) => {
@@ -114,8 +114,12 @@ const teamMembersArray = []
                 teamMembersArray.push(manager);
                 console.log (teamMembersArray);
                 if (response.another == true) { mainQuestions() }
-        
-            })
+                else(
+                    fs.writeFile('./index.html', generateHTML(teamMembersArray), (err) =>
+                    err ? console.log(err) : console.log('Profile Created.')
+              
+                    )); 
+                })
     };
 
 
@@ -136,6 +140,11 @@ const teamMembersArray = []
                 const engineer = new Engineer(response.name, response.id, response.email, response.github)
                 teamMembersArray.push(engineer);
                 if (response.another == true) { mainQuestions() }   
+                else(
+                    fs.writeFile('./index.html', generateHTML(teamMembersArray), (err) =>
+                    err ? console.log(err) : console.log('Profile Created.')
+                
+                    )); 
             })
     };
 
@@ -147,16 +156,20 @@ const teamMembersArray = []
                 const intern = new Intern(response.name, response.id, response.email, response.school)
                 teamMembersArray.push(intern);
                 if (response.another == true) { mainQuestions() }
+                else(
+                    fs.writeFile('./index.html', generateHTML(teamMembersArray), (err) =>
+                    err ? console.log(err) : console.log('Profile Created.')
                 
+                    )); 
             })
     }
 
 
 
 
-    initialize()
+    managerCreation()
 
-    module.exports = initialize;
+    module.exports = managerCreation;
 
 
     
